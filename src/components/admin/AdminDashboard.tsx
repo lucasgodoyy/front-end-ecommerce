@@ -4,10 +4,11 @@ import { MarcaCadastroBox } from '../brands/BrandForm';
 
 function AdminDashboard() {
   // Abas principais
-  const [activeTab, setActiveTab] = useState<'produtos' | 'pedidos' | 'marcas' | null>(null);
+  const [activeTab, setActiveTab] = useState<'products' | 'orders' | 'brands' | null>(null);
 
   // Sub-abas de produtos
-  const [activeProductTab, setActiveProductTab] = useState<'cadastrar' | 'listar' | null>(null);
+  const [activeProductTab, setActiveProductTab] = useState<'create' | 'list' | null>(null);
+
 
   const [hoveredTab, setHoveredTab] = useState<string | null>(null);
 
@@ -18,17 +19,17 @@ function AdminDashboard() {
 
       {/* Menu de abas principais */}
       <div style={{ marginBottom: '20px', display: 'flex', gap: '10px', position: 'relative' }}>
-        <button onClick={() => setActiveTab('produtos')}>Produtos</button>
+        <button onClick={() => setActiveTab('products')}>Produtos</button>
 
 
         {/* Botão Pedidos */}
         <div
           style={{ position: 'relative' }}
-          onMouseEnter={() => setHoveredTab('pedidos')}
+          onMouseEnter={() => setHoveredTab('orders')}
           onMouseLeave={() => setHoveredTab('null')}
         >
-          <button onClick={() => setActiveTab('pedidos')}>Pedidos</button>
-          {hoveredTab === 'pedidos' && (
+          <button onClick={() => setActiveTab('orders')}>Pedidos</button>
+          {hoveredTab === 'orders' && (
             <div
               style={{
                 position: 'absolute',
@@ -52,7 +53,7 @@ function AdminDashboard() {
 
         {/* Botão "Marcas" com hover */}
 
-        <button onClick={() => setActiveTab('marcas')}>Marcas</button>
+        <button onClick={() => setActiveTab('brands')}>Marcas</button>
 
 
 
@@ -60,7 +61,7 @@ function AdminDashboard() {
       </div>
 
       {/* Conteúdo das abas */}
-      {activeTab === 'produtos' && (
+      {activeTab === 'orders' && (
         <div
           style={{
             position: 'relative',
@@ -74,10 +75,10 @@ function AdminDashboard() {
           {/* Sub-abas flutuantes */}
           <div style={{ marginBottom: '10px', display: 'flex', gap: '10px' }}>
             <button
-              onClick={() => setActiveProductTab('cadastrar')}
+              onClick={() => setActiveProductTab('create')}
               style={{
-                backgroundColor: activeProductTab === 'cadastrar' ? '#007bff' : '#e0e0e0',
-                color: activeProductTab === 'cadastrar' ? '#fff' : '#000',
+                backgroundColor: activeProductTab === 'create' ? '#007bff' : '#e0e0e0',
+                color: activeProductTab === 'create' ? '#fff' : '#000',
                 padding: '8px 16px',
                 border: 'none',
                 borderRadius: '4px',
@@ -88,10 +89,10 @@ function AdminDashboard() {
 
 
             <button
-              onClick={() => setActiveProductTab('listar')}
+              onClick={() => setActiveProductTab('list')}
               style={{
-                backgroundColor: activeProductTab === 'listar' ? '#007bff' : '#e0e0e0',
-                color: activeProductTab === 'listar' ? '#fff' : '#000',
+                backgroundColor: activeProductTab === 'list' ? '#007bff' : '#e0e0e0',
+                color: activeProductTab === 'list' ? '#fff' : '#000',
                 padding: '8px 16px',
                 border: 'none',
                 borderRadius: '4px',
@@ -102,17 +103,17 @@ function AdminDashboard() {
           </div>
 
           {/* Conteúdo das sub-abas */}
-          {activeProductTab === 'cadastrar' && <ProdutoCadastro />}
-          {activeProductTab === 'listar' && <ProdutoLista />}
+          {activeProductTab === 'create' && <ProdutoCadastro />}
+          {activeProductTab === 'list' && <ProdutoLista />}
         </div>
       )}
 
 
 
 
-      {activeTab === 'pedidos' && <p>Aqui vai a lista de pedidos</p>}
+      {activeTab === 'orders' && <p>Aqui vai a lista de pedidos</p>}
 
-      {activeTab === 'marcas' && (
+      {activeTab === 'brands' && (
         <div
           style={{
             position: 'relative',
