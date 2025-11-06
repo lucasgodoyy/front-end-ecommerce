@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ProdutoLista, ProdutoCadastro, } from '../product/ProductDetails';
 import { MarcaCadastroBox } from '../brands/BrandForm';
+import styles from './AdminDashboard.module.css';
 
 function AdminDashboard() {
   // Abas principais
@@ -18,45 +19,28 @@ function AdminDashboard() {
       <h1>Painel Administrativo</h1>
 
       {/* Menu de abas principais */}
-      <div style={{ marginBottom: '20px', display: 'flex', gap: '10px', position: 'relative' }}>
-        <button onClick={() => setActiveTab('products')}>Produtos</button>
+      <div className={styles.tabsContainer}>
+
+        <button
+          className={`${styles.tabButton}${activeTab === 'products' ? ` ${styles.active}` : ''}`}
+          onClick={() => setActiveTab('products')}>
+          Products
+        </button>
 
 
-        {/* Botão Pedidos */}
-        <div
-          style={{ position: 'relative' }}
-          onMouseEnter={() => setHoveredTab('orders')}
-          onMouseLeave={() => setHoveredTab('null')}
-        >
-          <button onClick={() => setActiveTab('orders')}>Pedidos</button>
-          {hoveredTab === 'orders' && (
-            <div
-              style={{
-                position: 'absolute',
-                top: '40px',
-                left: 0,
-                backgroundColor: '#fff',
-                border: '1px solid #ccc',
-                borderRadius: '8px',
-                padding: '10px',
-                boxShadow: '0 4px 8px rgba(0,0,0,0.15)',
-                zIndex: 10,
-              }}
-            >
-              <p style={{ margin: 0 }}>Opção 1 Pedidos</p>
-              <p style={{ margin: 0 }}>Opção 2 Pedidos</p>
-            </div>
-          )}
-        </div>
+        <button
+          className={`${styles.tabButton}${activeTab === 'orders' ? ` ${styles.active}` : ''}`}
+          onClick={() => setActiveTab('orders')}>
+          Orders
+        </button>
 
 
 
-        {/* Botão "Marcas" com hover */}
-
-        <button onClick={() => setActiveTab('brands')}>Marcas</button>
-
-
-
+        <button
+          className={`${styles.tabButton}${activeTab === 'brands' ? ` ${styles.active}` : ''}`}
+          onClick={() => setActiveTab('brands')}>
+          Brands
+        </button>
 
       </div>
 

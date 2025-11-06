@@ -1,0 +1,42 @@
+.tabsContainer {
+  display: flex;
+  gap: 10px;
+  position: relative;
+  margin-bottom: 50px;
+}
+
+.tabButton {
+  background: linear-gradient(180deg, #00b050 0%, #062e19 100%);
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 15px;
+  padding: 10px 22px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.tabButton:hover {
+  background: linear-gradient(180deg, #00c55f 0%, #008e43 100%);
+  transform: translateY(-1px);
+}
+
+.tabButton:active {
+  background: linear-gradient(180deg, #009e45 0%, #006f34 100%);
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  z-index: 10;
+}
