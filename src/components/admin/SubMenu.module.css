@@ -1,0 +1,29 @@
+.submenu {
+  position: fixed;
+  left: 200px; 
+  background-color: #c0bcbc;
+  display: flex;
+  flex-direction: column;
+  min-width: 180px;
+  padding: 10px 0;
+  border-radius: 4px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  z-index: 1000;
+   top: 0;
+}
+
+.submenu button {
+  padding: 8px 16px;
+  border: none;
+  background-color: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.submenu button:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.menuItem {
+  position: relative; 
+}

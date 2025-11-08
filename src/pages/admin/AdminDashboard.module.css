@@ -1,0 +1,13 @@
+.adminDashboard {
+  display: flex;
+}
+
+.content {
+  margin-left: 220px; /* espaço para a sidebar */
+  padding: 20px;
+  flex: 1;
+}
+.adminDashboard h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+} 

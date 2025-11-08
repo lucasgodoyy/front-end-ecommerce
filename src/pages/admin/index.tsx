@@ -1,5 +1,5 @@
 // pages/admin/index.tsx
-import AdminDashboard from '@components/admin/AdminDashboard';
+import AdminDashboard from 'pages/admin/AdminDashboard';
 
 
 
